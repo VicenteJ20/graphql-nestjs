@@ -1,0 +1,17 @@
+# Operaciones de consulta (Query) realiza las equivalentes a GET en REST.
+type Query {
+  hello: String
+  name: String
+}
+
+# Operaciones de modificación (Mutación) realiza las equivalentes entre Crear, Actualizar y Eliminar. En REST.
+type Mutation {
+  add(input: NumberInput): Float
+}
+
+# Elemento que se usa para simplificar la entrada de una definición.
+# Como se ve, se usa la definición add para introducir dos números.
+input NumberInput {
+  a: Float
+  b: Float
+}
