@@ -10,9 +10,23 @@ export class GraphQLResolver {
   @Mutation('add')
   async add(@Args('input') input: {
     a: number,
-    b: number
+    b: number,
+    c: number,
+    cadena: string
   }) {
-    const { a, b } = input;
-    return a + b;
+    const { a, b, c, cadena } = input;
+    
+    return a + b + c + cadena.length
+  }
+
+  @Mutation('delete')
+  async delete(@Args('input') input: {
+    a: number,
+    b: number,
+    c: number
+  }) {
+    const { a, b, c } = input;
+
+    return a - b * c;
   }
 }

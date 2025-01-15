@@ -4,9 +4,14 @@ type Query {
   name: String
 }
 
+type Subscription {
+  newMessage: String
+}
+
 # Operaciones de modificación (Mutación) realiza las equivalentes entre Crear, Actualizar y Eliminar. En REST.
 type Mutation {
   add(input: NumberInput): Float
+  delete(input: NumberInput): Float
 }
 
 # Elemento que se usa para simplificar la entrada de una definición.
@@ -14,4 +19,6 @@ type Mutation {
 input NumberInput {
   a: Float
   b: Float
+  c: Float
+  cadena: String
 }

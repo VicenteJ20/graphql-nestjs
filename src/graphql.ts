@@ -11,6 +11,8 @@
 export interface NumberInput {
     a?: Nullable<number>;
     b?: Nullable<number>;
+    c?: Nullable<number>;
+    cadena?: Nullable<string>;
 }
 
 export interface IQuery {
@@ -18,8 +20,13 @@ export interface IQuery {
     name(): Nullable<string> | Promise<Nullable<string>>;
 }
 
+export interface ISubscription {
+    newMessage(): Nullable<string> | Promise<Nullable<string>>;
+}
+
 export interface IMutation {
     add(input?: Nullable<NumberInput>): Nullable<number> | Promise<Nullable<number>>;
+    delete(input?: Nullable<NumberInput>): Nullable<number> | Promise<Nullable<number>>;
 }
 
 type Nullable<T> = T | null;
